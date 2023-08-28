@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14"
+                id="SearchApprisalHis_BTF_SearchApprisalHis_BTF_ExecutePageDef" Package="taskflow"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="ApprisalHisHdr_VO1" RangeSize="25" DataControl="Oando_AMDataControl"
+              id="ApprisalHisHdr_VOIterator" Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="ApprisalHisHdr_VOIterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

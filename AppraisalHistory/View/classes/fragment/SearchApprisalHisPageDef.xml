@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="SearchApprisalHisPageDef"
+                Package="fragment">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ApprisalHisHdr_VO" RangeSize="6" DataControl="Oando_AMDataControl"
+              id="ApprisalHisHdr_VOIterator"/>
+    <searchRegion Criteria="search_VC" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ApprisalHisHdr_VOIterator" id="searchVCQuery"/>
+  </executables>
+  <bindings>
+    <listOfValues IterBinding="ApprisalHisHdr_VOIterator" StaticList="false" Uses="LOV_Trans_Name" id="Trans_Name"/>
+    <attributeValues IterBinding="ApprisalHisHdr_VOIterator" id="Trans_No">
+      <AttrNames>
+        <Item Value="Trans_No"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ApprisalHisHdr_VOIterator" id="Trans_Email">
+      <AttrNames>
+        <Item Value="Trans_Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ApprisalHisHdr_VOIterator" id="Trans_BusinessGroup">
+      <AttrNames>
+        <Item Value="Trans_BusinessGroup"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ApprisalHisHdr_VOIterator" id="AppraisalHistHdrId">
+      <AttrNames>
+        <Item Value="AppraisalHistHdrId"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="ApprisalHisHdr_VOIterator" id="ApprisalHisHdr_VO">
+      <nodeDefinition DefName="model.vo.ApprisalHisHdr_VO" Name="ApprisalHisHdr_VO0">
+        <AttrNames>
+          <Item Value="PlanName"/>
+          <Item Value="Initiator"/>
+          <Item Value="AppraisalDate"/>
+          <Item Value="AppraisalPeriodEndDate"/>
+          <Item Value="AppraisalPeriodStartDate"/>
+          <Item Value="OverallRating"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="ApprisalHisHdr_VOIterator" id="PlanName">
+      <AttrNames>
+        <Item Value="PlanName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ApprisalHisHdr_VOIterator" id="EmployeeNumber">
+      <AttrNames>
+        <Item Value="EmployeeNumber"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>
